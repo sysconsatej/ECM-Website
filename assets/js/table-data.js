@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded' , function(e) {
 
-    const apiUrl = 'http://173.212.223.232:3017/api/v1/trackData/'; 
+    const apiUrl = 'http://94.136.187.170:4017/api/v1/trackData/'; 
 
     function showLoading() {
         document.getElementById('loading').style.display = 'block';

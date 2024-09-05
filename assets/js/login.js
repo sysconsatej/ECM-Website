@@ -11,7 +11,7 @@ form.addEventListener('change', (event) => {
 });
 
 btn.addEventListener('click', async (event) => {
-    const url = "http://localhost:3017/api/v1/login";
+    const url = "http://94.136.187.170:4017/api/v1/login";
     try {
         const res = await axios.post(url, data);
         console.log(res);
@@ -31,8 +31,9 @@ btn.addEventListener('click', async (event) => {
           }).showToast();
        } , 100)
 
+            const url = "http://94.136.187.170:4001/customerPortal/quotation/list";
             // Redirect to another page
-            window.location.href = "http://173.212.223.232:4001/customerPortal/bl/list";
+            window.location.href = `${url}`;
             // Reset the form fields
             form.reset();
         }
