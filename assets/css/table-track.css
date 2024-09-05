@@ -1,0 +1,55 @@
+.tblWrapper {
+  height: 400px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead,
+th {
+  position: sticky;
+  top: -1px;
+}
+
+tbody {
+  height: 300px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+th {
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #ffc400;
+  color: #fff;
+  padding: 5px;
+  text-align: left;
+  border-left: 2px solid #ddd;
+}
+
+td {
+  font-size: 14px;
+}
+
+td {
+  padding: 5px;
+  text-align: left;
+  border: 2px solid #ddd;
+}
+
+.text-center {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+#loading {
+  display: none;
+  font-size: 14px;
+  text-align: center;
+  margin: 20px;
+  font-weight: 500;
+}
