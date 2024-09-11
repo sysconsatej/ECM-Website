@@ -582,7 +582,12 @@ p {
 .banner-parent.banner-parent-abt {
     max-width: min-content;
 }
-
+.form-left .banner-title h1 {
+    color: #000;
+}
+a.noLink {
+    background-color: transparent;
+}
 
 
 
@@ -675,7 +680,7 @@ p {
 /* Home CSS */
 
 .banner-sec-home {
-    padding: 160px 0px 80px 0px;
+    padding: 160px 0px 120px 0px;
     position: relative;
     overflow: hidden;
 }
@@ -864,13 +869,13 @@ p {
 }
 .bottom-border {
     position: absolute;
+    top: 36%;
+    bottom: -30px;
     left: -30px;
-    top: 250px;
-    bottom: 0;
-    border: 2px solid #FEC801;
+    right: 0;
+    max-width: 65%;
     z-index: -1;
-    width: 820px;
-    height: 330px;
+    border: 2px solid #ffc701;
 }
 /* .map-section {
     margin-top: -90px;
@@ -1946,7 +1951,7 @@ span.expand-btn svg {
     gap: 10px;
 }
 .our-location-contact-content-image img {
-    max-width: 25px;
+    max-width: 22px;
 }
 .our-location-contact-wrapper {
     display: flex;
@@ -1955,12 +1960,10 @@ span.expand-btn svg {
     
 }
 .our-location-wrapper {
-    padding: 40px 50px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    padding: 0px 20px;
     border-radius: 5px;
-    flex: 0 0 45%;
-    max-width: 45%;
-    min-height: 310px;
+    flex: 0 0 33%;
+    max-width: 33%;
 }
 .our-location-contact-content-link a {
     background-color: transparent;
@@ -1970,35 +1973,42 @@ span.expand-btn svg {
 }
 .our-locations-parent {
     display: flex;
-    gap: 50px 40px;
+    gap: 40px 0px;
     justify-content: center;
     flex-wrap: wrap;
 }
 .our-locations {
-    width: 70%;
-    margin: 0 auto;
-    padding-bottom: 60px;
+    margin: 100px 0;
+    padding-bottom: 20px;
     overflow: hidden;
 }
+.our-location-wrapper-in {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 4px 10px 0px;
+    padding: 20px;
+    min-height: 290px;
+}
 .our-location-wrapper-title {
-    padding-left: 40px;
+    padding-left: 35px;
     margin-bottom: 20px;
 }
 .our-location-wrapper-title h5 {
-    font-size: 23px;
+    font-size: 20px;
     line-height: 32px;
+    text-transform: uppercase;
+}
+.our-location-contact-content-link.our-location-contact-content-link-inline a {
+    display: inline;
+    margin-right: 10px;
 }
 .our-location-contact p,
 .our-location-contact a{
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 23px;
 }
 .our-location-contact a {
     padding: 0;
 }
-.bottom-border.bottom-border-presence {
-    top: 230px;
-}
+
 
 /*Career*/
 .career-content {
@@ -2145,13 +2155,13 @@ span.expand-btn svg {
     overflow: hidden;
 }
 .join-team-career .image-bottom {
-    left: 280px;
+    left: 310px;
     z-index: -1;
-    bottom: 50px;
+    bottom: 60px;
 }
 .join-team-career .image-bottom img {
     width: auto;
-    max-width: 110px;
+    max-width: 90px;
 }
 .join-team-career .form-name {
     display: block;
@@ -2304,6 +2314,36 @@ span.expand-btn svg {
 .banner-sec-home.banner-sec-abt {
         padding: 160px 0px 120px 0px;
     }
+    a:visited {
+        outline: none;
+        border: none;
+    }
+
+
+
+    .chairman-message {
+        margin: 0 0 60px;
+        text-align: center;
+    }  
+
+.chairman-message-title h3 {
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffc400;
+    width: fit-content;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+}
+.chairman-message-para p {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+.chairman-message-para {
+    margin-top: 30px;
+}
 
 /*Responsive CSS*/
 
@@ -2327,10 +2367,28 @@ span.expand-btn svg {
         margin-top: 40px;
     }
     
+    .banner-sec-home.banner-sec-abt {
+        padding: 160px 0px 170px 0px;
+    }
     /*Services*/
     .banner-right.banner-right-abt.banner-right-services {
         max-width: 1290px;
         top: -524px;
+    }
+    
+    /*Career*/
+    .join-team-career .image-bottom {
+        left: 470px;
+        bottom: 60px;
+    }
+    
+    /*Contact*/
+    
+    .banner-right.banner-right-contact {
+        max-width: 1450px;
+    }
+    .banner-sec-home.banner-sec-contact {
+        padding: 160px 0px 300px;
     }
     
     
@@ -2378,6 +2436,33 @@ span.expand-btn svg {
 .banner-sec-home.banner-sec-nvocc {
     padding: 160px 0 200px 0px;
 }
+.why-choose-right button.owl-next {
+    right: -40px;
+}
+.award-recog-right .owl-nav button.owl-next {
+    right: -60px;
+}
+.award-recog-right .owl-nav button.owl-next img {
+    max-width: 35px;
+}
+.join-team-career .image-bottom {
+    left: 240px;
+    bottom: 70px;
+}
+.join-team-career .image-bottom img {
+    max-width: 90px;
+}
+.form-left-contact .image-bottom img {
+    max-width: 90px;
+}
+.form-left-contact .image-bottom {
+    left: -30px;
+    bottom: -30px;
+}
+.banner-right.banner-right-contact {
+    max-width: 1220px;
+}
+
 }
 
 @media only screen and (max-width :1366px) {
@@ -2403,8 +2488,8 @@ span.expand-btn svg {
         }
         .award-recog-right .owl-nav button.owl-next {
             position: absolute;
-            left: 90px;
-            bottom: 0px;
+            left: -50px;
+            bottom: 130px;
         }
         .award-recog-right .owl-nav{
             
@@ -2456,13 +2541,9 @@ span.expand-btn svg {
         .form-left-contact .image-bottom img {
             max-width: 100px;
         }
-        .our-locations {
-            width: 75%;
-        }
         .our-location-wrapper {
-            flex: 0 0 47%;
-            max-width: 47%;
-            min-height: 320px;
+            flex: 0 0 33%;
+            max-width: 33%;
         }
         .image-blue-circle {
             top: -70px;
@@ -2477,6 +2558,19 @@ span.expand-btn svg {
             right: -160px;
         }
         
+        /*About*/
+        
+        .banner-sec-home.banner-sec-abt {
+            padding: 160px 0px 140px 0px;
+        }
+        .banner-right.banner-right-abt.banner-right-custom-clearance {
+            top: -464px;
+            max-width: 1020px;
+        }
+        .join-team-career .image-bottom {
+        left: 200px;
+        bottom: 60px;
+    }
    
 }
 
@@ -2516,20 +2610,48 @@ span.expand-btn svg {
         flex: 0 0 60%;
         max-width: 60%;
     }
-    .footer-parent {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1.4fr;
-    }
-    
     /*Services*/
     .banner-right.banner-right-abt.banner-right-services {
         right: -200px;
     }
     .banner-right.banner-right-abt.banner-right-custom-clearance {
-   top: -504px;
-    max-width: 1050px;
-    right: -170px;
-}
+       top: -504px;
+        max-width: 1050px;
+        right: -170px;
+    }
     
+    .banner-right.banner-right-contact {
+        max-width: 1190px;
+        top: -410px;
+        right: -250px;
+    }
+    .form-left-contact .image-bottom img {
+        max-width: 80px;
+    }
+    .form-left-contact .image-bottom {
+        left: -25px;
+        bottom: -30px;
+    }
+    .join-team-career .image-bottom {
+        left: 180px;
+        bottom: 60px;
+    }
+    .join-team-career .image-bottom img {
+        width: auto;
+        max-width: 90px;
+    }
+    .bottom-border {
+        left: -20px;
+    }
+    .banner-sec-home.banner-sec-abt {
+        padding: 160px 0px 180px 0px;
+    }
+    .our-location-wrapper-in {
+        min-height: 310px;
+    }
+    .our-location-wrapper {
+        padding: 0px 15px;
+    }
     
 }
 
@@ -2590,10 +2712,7 @@ span.expand-btn svg {
     .cargo-wrapper-image {
         height: 100%;
     }
-    .map-parent-wrapper .bottom-border {
-        left: -20px;
-        top: 150px;
-    }
+    
     .award-recog-right .owl-nav button.owl-next img {
         max-width: 40px;
     }
@@ -2643,23 +2762,12 @@ span.expand-btn svg {
     }
     
     /*Our Presence*/
-    .our-locations-parent {
-        gap: 50px 30px;
-    }
-    .our-locations {
-        width: 91%;
+    .our-location-wrapper-title {
+        margin-bottom: 10px;
     }
     .our-location-wrapper {
-        padding: 40px 50px;
-        min-height: 320px;
-    }
-    .our-location-contact p, .our-location-contact a {
-        font-size: 15px;
-        line-height: 25px;
-    }
-    .our-location-wrapper {
-        flex: 0 0 48%;
-        max-width: 48%;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
     
     /*Contact Us*/
@@ -2725,6 +2833,53 @@ span.expand-btn svg {
         margin: 0 auto;
         margin-top: 90px;
     }
+    .why-choose-right button.owl-next {
+        right: -40px;
+    }
+    .footer-parent {
+        grid-template-columns: 1fr 1.3fr 1fr 1.5fr;
+    }
+    .bottom-border {
+        bottom: -18px;
+        left: -13px;
+    }
+    .banner-parent.banner-parent-abt {
+        max-width: fit-content;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+        .join-team-career .image-bottom {
+        left: 90px;
+        bottom: 70px;
+    }
+        .join-team-career .image-bottom img {
+        max-width: 80px;
+    }
+    .banner-parent.banner-parent-contact {
+        max-width: fit-content;
+        margin: 0 auto;
+        margin-top: 100px;
+        position: relative;
+        z-index: 1;
+    }
+    .banner-right.banner-right-contact {
+        max-width: 1340px;
+        top: -250px;
+        right: -250px;
+    }
+    .form-left-contact .image-bottom {
+        left: -20px;
+        bottom: -32px;
+    }
+    .form-left-contact .image-bottom img {
+        max-width: 80px;
+    }
+    .form-section-main .form-right .image-bottom img {
+        max-width: 90px;
+    }
+    .join-team-form-wrapper {
+        width: 80%;
+    }
 }
 
 
@@ -2766,17 +2921,14 @@ span.expand-btn svg {
     /*Our Presence*/
     
     .our-location-wrapper {
-        padding: 40px 50px;
-        flex: 0 0 90%;
-        max-width: 90%;
-        min-height: auto;
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0px 12px;
      }
-     .bottom-border {
-        left: -30px;
-        top: 310px;
-        width: 570px;
-        height: 300px;
-     }
+     .our-location-wrapper-in {
+        min-height: 310px;
+    }
+    
      
     /*Track Trace*/
     .form-section-wrapper {
@@ -2908,14 +3060,9 @@ span.expand-btn svg {
     .why-choose-us {
         margin-top: 80px;
     }
-    .map-parent-wrapper .bottom-border {
-        top: 100px;
-        width: 620px;
-        height: 280px;
-        left: -10px;
-    }
+   
     .banner-parent-wrapper .banner-form {
-        margin-top: 170px;
+        margin-top: 200px;
         max-width: 100%;
     }
     .banner-sec-home.banner-sec-home-main .banner-parent {
@@ -2938,8 +3085,115 @@ span.expand-btn svg {
     }
     
     /*Home*/
-    
+    .award-recog-left {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .award-recog-right .owl-nav button.owl-next img {
+        max-width: 35px;
+    }
+    .award-recog-right .owl-nav button.owl-next {
+        left: -50px;
+    }
+    .banner-sec-home.banner-sec-abt {
+        padding: 160px 0px 180px 0px;
+    }
+    .banner-sec-home {
+        padding: 160px 0px 200px 0px;
+    }
+    .banner-right.banner-right-abt.banner-right-services {
+        max-width: 1010px;
+    }
+    .banner-sec-home.banner-sec-contact {
+        padding: 160px 0px 250px;
+    }
+    .banner-parent.banner-parent-contact {
+        margin-top: 40px;
+    }
+    .form-left-contact .image-bottom {
+        left: -10px;
+        bottom: -32px;
+    }
+    .form-left-contact .image-bottom img {
+        max-width: 80px;
+    }
+    .form-section-main .form-section-wrapper .form-right .image-bottom {
+        bottom: 32px;
+        left: -10px;
+    }
+    .form-section-main .form-right .image-bottom img {
+        max-width: 80px;
+    }
+    .our-location-wrapper-title h5 {
+        font-size: 17px;
+        line-height: 30px;
+    }
 }
+@media only screen and (max-width:576px){
+    
+     .banner-right {
+        top: -20px;
+        left: -60px;
+        max-width: 1010px;
+    }
+    .banner-parent-wrapper .banner-form {
+        margin-top: 180px;
+    }
+    .banner-title h1 {
+        line-height: 60px;
+        font-size: 50px;
+    }
+    .banner-sec-home.banner-sec-home-main {
+        padding: 160px 0px 30px 0px;
+    }
+    .cargo-types .owl-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 15px;
+    }
+    .cargo-types .owl-nav button img {
+        max-width: 35px;
+    }
+    .bottom-border {
+        bottom: -17px;
+        left: -10px;
+    }
+    .award-recog-left {
+        flex: 0 0 90%;
+        max-width: 80%;
+    }
+    .footer-parent {
+        grid-template-columns: 1fr 1fr;
+    }
+    .banner-sec-home {
+        padding: 160px 0px 130px 0px;
+    }
+    .banner-parent.banner-parent-service {
+        margin-top: 20px;
+    }
+    .join-team-form-wrapper {
+        width: 80%;
+        padding: 40px;
+    }
+       .banner-right.banner-right-contact {
+        top: -130px;
+        right: -220px;
+    }
+    .form-section-main .form-section-wrapper .form-right .image-bottom {
+        bottom: 22px;
+    }
+    .chairman-message-para p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    
+    
+    
+}    
+
+
 
  
 /*----------------------------- Media Mobile Screen -------------------------------*/
@@ -2976,25 +3230,19 @@ span.expand-btn svg {
         .our-location-wrapper {
             flex: 0 0 100%;
             max-width: 100%;
-            min-height: auto;
-            padding: 40px;
+            padding: 0px 12px;
         }
-        .bottom-border {
-            left: -110px;
-            top: 290px;
-            width: 510px;
-            height: 320px;
+        .our-location-wrapper-in {
+            min-height: 230px;
         }
+        
         .our-location-contact p {
             min-height: auto;
         }
         .our-location-contact-content-image img {
             max-width: 20px;
         }   
-        .our-location-contact p, .our-location-contact a {
-            font-size: 14px;
-            line-height: 23px;
-        }
+       
         .our-location-wrapper-title {
             padding-left: 10px;
             margin-bottom: 10px;
@@ -3002,6 +3250,7 @@ span.expand-btn svg {
         .our-location-wrapper-title h5 {
             font-size: 20px;
             line-height: 30px;
+            
         }
         .our-presence-parent .our-presence-para p {
             font-size: 15px;
@@ -3021,14 +3270,13 @@ span.expand-btn svg {
         }
         
         /*Contact Us*/
-        .banner-right-abt,
-        .banner-right{
+        .banner-right-abt, .banner-right {
             position: absolute;
-            top: -120px;
+            top: -80px;
             bottom: 0;
             overflow: hidden;
             right: -70px;
-            width: 870px;
+            width: 680px;
             z-index: -1;
         }
         .banner-parent {
@@ -3076,7 +3324,7 @@ span.expand-btn svg {
         
         /*Career*/
         .join-team-career .join-team-form-wrapper {
-            padding: 40px;
+            padding: 40px 30px;
         }
         .join-team-form form {
             grid-template-columns: 1fr;
@@ -3197,12 +3445,6 @@ span.expand-btn svg {
         .map-section-mobile {
             display: block;
         }
-        .map-parent-wrapper .bottom-border {
-            top: 290px;
-            width: 440px;
-            height: 250px;
-            left: -10px;
-        }
         .abt-custom-clerance .abt-left {
             flex: 0 0 100%;
             max-width: 100%;
@@ -3213,8 +3455,13 @@ span.expand-btn svg {
             left: -10px;
         }
         .banner-right.banner-right-abt.banner-right-services {
-            top: 0;
-            width: 720px;
+            top: -70px;
+            max-width: 650px;
+            right: -30px;
+            left: -90px;
+        }
+        .banner-sec-home {
+            padding: 160px 0px 180px 0px;
         }
         .banner-parent.banner-parent-service {
             padding-bottom: 40px;
@@ -3223,7 +3470,52 @@ span.expand-btn svg {
             left: 170px;
             bottom: 0px;
         }
-    }
+        .map-section-mobile {
+            border: 2px solid #FEC801;
+            padding: 8px;
+        }
+        .form-section-main .form-right .image-bottom img {
+            max-width: 70px;
+        }
+        .banner-sec-home.banner-sec-contact {
+            padding: 160px 0px 200px;
+        }
+        .banner-sec-home.banner-sec-contact .banner-parent.banner-parent-contact {
+            margin-top: 30px;
+        }
+        .form-left-contact .image-bottom img {
+            max-width: 70px;
+        }
+        .career-content-title h1 {
+            font-size: 27px !important;
+            line-height: 39px !important;
+        }
+        .join-team-title h2 {
+            font-size: 22px !important;
+            line-height: 35px;
+        }
+        .bottom-border {
+            display: none;
+        }
+        .our-presence-parent {
+            margin-top: 110px;
+        }
+        .map-parent-wrapper-home {
+            padding-bottom: 0px;
+        }
+        .our-locations {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .banner-sec-home.banner-sec-abt {
+            padding: 160px 0px 200px 0px;
+        }
+        .banner-right.banner-right-contact {
+            top: -30px;
+            right: -220px;
+            max-width: 610px;
+        }
+}
 
 /*----------------------------- Media Small Screen -------------------------------*/
 @media only screen and (max-width:360px){
@@ -3240,11 +3532,6 @@ span.expand-btn svg {
     }
     
     /*Our Presence*/
-    .bottom-border {
-        width: 410px;
-        height: 340px;
-        left: -100px;
-    }
     .our-locations {
         width: 100%;
     }
@@ -3288,7 +3575,7 @@ span.expand-btn svg {
     
     /*Contact Us*/
     .our-location-wrapper {
-        padding: 40px 20px;
+        padding: 0 ;
     }
     .our-location-wrapper-title h5 {
         font-size: 19px;
@@ -3309,15 +3596,16 @@ span.expand-btn svg {
     .career-content-title h1 {
         font-size: 28px !important;
         line-height: 36px !important;
+        text-align: center;
     }
     .join-team-career .join-team-form-wrapper {
         width: 100%;
     }
     .join-team-career .image-bottom {
-        left: 230px;
+        left: 0px;
     }
     .join-team-career .image-bottom img {
-        max-width: 90px;
+        max-width: 70px;
     }
     .want-to-know-wrapper {
         flex-wrap: wrap;
@@ -3381,17 +3669,12 @@ span.expand-btn svg {
         line-height: 34px !important;
     }
     
-    .map-parent-wrapper .bottom-border {
-        top: 190px;
-        width: 360px;
-        height: 220px;
-    }
     .search-button input {
         width: 100%;
         height: 100%;
     }
     .banner-parent-wrapper .banner-form {
-        margin-top: 260px;
+        margin-top: 140px;
     }
     button.search img {
         max-width: 22px;
@@ -3411,7 +3694,7 @@ span.expand-btn svg {
         line-height: 22px !important;
     }
     .banner-sec-home {
-        padding: 160px 0px 50px 0px;
+        padding: 160px 0px 200px 0px;
     }
     .container {
         padding: 0px 10px;
@@ -3428,17 +3711,86 @@ span.expand-btn svg {
         width: 1150px;
     }
     .banner-right.banner-right-abt.banner-right-services {
-        top: 0;
-        width: 620px;
+        top: 0px;
+        max-width: 540px;
+        left: -60px;
+        right: 0;
+    }
+    .services-slider {
+        margin: 30px 0px 120px;
     }
     .award-recog-right .owl-nav button.owl-next {
         left: 120px;
         bottom: 0px;
     }
+    .form-section-main .form-right .image-bottom img {
+        max-width: 60px;
+    }
+    .form-section-main .form-section-wrapper .form-right .image-bottom {
+        bottom: 7px;
+    }
+    .form-upload input {
+        padding: 12px 10px;
+        font-size: 14px !important;
+    }
+    .join-team-title h2 {
+        text-align: center;
+    }
+    .form-section-contact {
+        margin: 50px 0px 0;
+    }
    
 }
+/*----------------------------- Media Small Screen -------------------------------*/
+@media only screen and (max-width:320px){
+    
+    
+    h1 {
+        font-size: 26px !important;
+        line-height: 38px !important;
+    }
+    .radio-button-field {
+        gap: 8px;
+    }
+    .form-radio label {
+        font-size: 13px !important;
+        line-height: 32px;
+    }
+    .award-recog-left {
+        text-align: center;
+    }
+    h3 {
+        font-size: 20px;
+        line-height: 32px !important;
+    }
+    .award-recog-right .owl-nav button.owl-next {
+        left: 100px;
+    }
+    .banner-sec-home.banner-sec-abt {
+        padding: 160px 0px 210px 0px;
+    }
+    .career-content-title h1 {
+        font-size: 22px !important;
+        line-height: 26px !important;
+        text-align: center;
+    }
+    .join-team-title h2 {
+        font-size: 22px !important;
+        line-height: 33px;
+        text-align: center;
+    }
+    .join-team-form-wrapper {
+        margin-top: 40px;
+    }
+    .form-upload input {
+        padding: 12px 10px;
+        font-size: 13px !important;
+    }
+    .form-section-contact {
+        margin: 50px 0px 0;
+    }
+    
+}    
+    
 
-.noLink {
-    background-color: transparent ;
-    padding: 0px;
-}
+
