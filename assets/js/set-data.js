@@ -76,4 +76,3 @@ searchInput.addEventListener('input', () => {
 });
 
 updateAnchor();
-
