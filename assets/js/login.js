@@ -16,9 +16,6 @@ btn.addEventListener('click', async (event) => {
         const res = await axios.post(url, data);
         console.log(res);
         if (res.status === 200) {
-        //   localStorage.setItem('email_id', data.email_id);
-        //   localStorage.setItem('password', data.password);
-
        setTimeout(() => {
         Toastify({
             text: `${res.data.message}`,
