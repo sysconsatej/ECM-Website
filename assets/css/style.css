@@ -560,6 +560,7 @@ p {
     color: #000;
     line-height: 28px;
     margin: 0;
+    text-align: justify;
 }
 
 .container {
@@ -738,6 +739,7 @@ a.noLink {
 .banner-para p {
     font-size: 25px;
     line-height: 32px;
+    text-align: left;
 }
 .abt-express-parent {
     display: flex;
@@ -903,7 +905,8 @@ a.noLink {
     max-width: 62%;
 }
 .award-wrapper-image img {
-    height: 260px;
+    /* height: 260px; */
+    height: 195px;
     object-fit: cover;
 }
 .award-content {
@@ -2004,6 +2007,7 @@ span.expand-btn svg {
 .our-location-contact a{
     font-size: 14px;
     line-height: 23px;
+    text-align: left;
 }
 .our-location-contact a {
     padding: 0;
@@ -2333,7 +2337,6 @@ span.expand-btn svg {
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 20px;
-    margin: 0 auto;
 }
 .chairman-message-para p {
     margin-bottom: 20px;
@@ -2343,6 +2346,14 @@ span.expand-btn svg {
 }
 .chairman-message-para {
     margin-top: 30px;
+}
+.chairman-message-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.chaimans-message-left {
+    flex: 0 0 58%;
+    max-width: 58%;
 }
 
 /*Responsive CSS*/
@@ -2880,6 +2891,14 @@ span.expand-btn svg {
     .join-team-form-wrapper {
         width: 80%;
     }
+    .chairman-message-wrapper {
+        flex-wrap: wrap;
+    }
+    .chaimans-message-left {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
 }
 
 
@@ -3071,6 +3090,13 @@ span.expand-btn svg {
     }
     .banner-sec-home.banner-sec-home-main .banner-parent .banner-left {
         max-width: fit-content;
+    }
+    .award-recog-right .owl-nav button.owl-next {
+        left: -70px;
+        bottom: 100px;
+    }
+    .award-wrapper-image img {
+        height: 158px;
     }
     
     /*NVOCC*/
@@ -3722,6 +3748,9 @@ span.expand-btn svg {
     .award-recog-right .owl-nav button.owl-next {
         left: 120px;
         bottom: 0px;
+    }
+    .award-wrapper-image img {
+        height: auto;
     }
     .form-section-main .form-right .image-bottom img {
         max-width: 60px;
