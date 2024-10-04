@@ -2308,6 +2308,7 @@ span.expand-btn svg {
 }
 .custom-clearance-content-top ul li {
     margin-bottom: 10px;
+    text-align: justify;
     
 }
 .custom-clearance-content-title.custom-clearance-our-service{
@@ -2355,6 +2356,85 @@ span.expand-btn svg {
     flex: 0 0 58%;
     max-width: 58%;
 }
+
+/* map CSS */
+
+#map { height: 500px; display: block; }
+.popup-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.popup-modal-inner {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+/* button.closeModal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: -5px -5px 0 0;
+    border: 0;
+    background-color: #333;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+} */
+button.closeModal {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    margin: -5px -5px 0 0;
+    border: 0;
+    background-color: #333;
+    border-radius: 50%;
+    width: 25px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+}
+.leaflet-control-attribution.leaflet-control a {
+    display: none;
+}
+.poup-content p {
+    font-size: 15px;
+    text-align: justify;
+    white-space: normal;
+    line-height: 25px;
+    margin-top: 10px;
+}
+/* button.closeModal svg {
+    display: block;
+    fill: #fff;
+    width: 90%;
+    height: 90%;
+} */
+.our-presence-wrapper-presence {
+    margin: 140px 0 80px;
+}
+
+
 
 /*Responsive CSS*/
 
@@ -3213,6 +3293,10 @@ span.expand-btn svg {
         font-size: 16px;
         line-height: 24px;
     }
+    .popup-modal-inner {
+        max-width: 300px;
+        padding: 20px;
+    }
 
     
     
@@ -3541,6 +3625,13 @@ span.expand-btn svg {
             right: -220px;
             max-width: 610px;
         }
+        .popup-modal-inner {
+            max-width: 300px;
+            padding: 20px;
+        }
+        .poup-content h5 {
+            font-size: 18px;
+        }
 }
 
 /*----------------------------- Media Small Screen -------------------------------*/
@@ -3768,6 +3859,10 @@ span.expand-btn svg {
     .form-section-contact {
         margin: 50px 0px 0;
     }
+    .popup-modal-inner {
+        max-width: 300px;
+        padding: 20px;
+    }
    
 }
 /*----------------------------- Media Small Screen -------------------------------*/
@@ -3817,6 +3912,10 @@ span.expand-btn svg {
     }
     .form-section-contact {
         margin: 50px 0px 0;
+    }
+    .popup-modal-inner {
+        max-width: 280px;
+        padding: 20px;
     }
     
 }    
