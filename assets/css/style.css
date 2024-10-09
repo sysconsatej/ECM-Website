@@ -949,14 +949,16 @@ a.noLink {
     position: relative;
 }
 .award-recog-right .owl-nav button.owl-prev {
-   display:none;
+    position: absolute;
+    left: -50px;
+    bottom: 100px;
 }
-.award-recog-right .owl-nav button.owl-next img {
-    max-width: 45px;
+.award-recog-right .owl-nav button img {
+    max-width: 35px;
 }
 .award-recog-right .owl-nav button.owl-next {
     position: absolute;
-    right: -90px;
+    right: -50px;
     bottom: 100px;
 }
 .cargo-wrapper-image img {
@@ -1078,15 +1080,14 @@ a.noLink {
     display: block !important;
 }
 .why-choose-right button.owl-prev {
-    /*position: absolute;*/
-    /*left: -20px;*/
-    /*bottom: 40px;*/
-    display:none;
+    position: absolute;*/
+    left: -40px;
+    bottom: 50px;
 }
 .why-choose-right button.owl-next {
     position: absolute;
-    right: -60px;
-    bottom: 50px;
+    right: -40px;
+    bottom: 60px;
 }
 .why-choose-right button img {
     max-width: 30px;
@@ -1103,7 +1104,7 @@ a.noLink {
 }
 .banner-parent-wrapper .banner-form {
     flex: 0 0 37%;
-    /* max-width: 37%; */
+    max-width: 37%;
     z-index: 500;
     margin-top: 30px;
     margin-left: auto;
@@ -2417,12 +2418,19 @@ button.closeModal {
 .leaflet-control-attribution.leaflet-control a {
     display: none;
 }
-.poup-content p {
-    font-size: 15px;
-    text-align: justify;
-    white-space: normal;
-    line-height: 25px;
-    margin-top: 10px;
+.poup-content {
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom:0;
+    display: inline-block;
+    text-align: left;
+}
+.poup-content-title{
+
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom:0;
+    display: inline-block;
 }
 /* button.closeModal svg {
     display: block;
@@ -2528,7 +2536,7 @@ button.closeModal {
     padding: 160px 0 200px 0px;
 }
 .why-choose-right button.owl-next {
-    right: -40px;
+    right: -20px;
 }
 .award-recog-right .owl-nav button.owl-next {
     right: -60px;
@@ -2611,6 +2619,21 @@ button.closeModal {
         .award-recog {
             overflow: hidden;
         }
+        .why-choose-right button.owl-prev,
+        .why-choose-right button.owl-next {
+            bottom: 80px;
+        }
+        .award-recog-right .owl-nav button.owl-prev,
+        .award-recog-right .owl-nav button.owl-next {
+            position: unset;
+        }
+        .award-recog-right .owl-nav {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
         
         /*Heading CSS*/
         h3 {
@@ -3577,8 +3600,9 @@ button.closeModal {
             padding-bottom: 40px;
         }
         .award-recog-right .owl-nav button.owl-next {
-            left: 170px;
-            bottom: 0px;
+            /* left: 170px;
+            bottom: 0px; */
+            position: unset;
         }
         .map-section-mobile {
             border: 2px solid #FEC801;
@@ -3837,8 +3861,15 @@ button.closeModal {
         margin: 30px 0px 120px;
     }
     .award-recog-right .owl-nav button.owl-next {
-        left: 120px;
-        bottom: 0px;
+        /* left: 120px;
+        bottom: 0px; */
+        position: unset;
+    }
+    .award-recog-right .owl-nav {
+        margin-top: 30px;
+    }
+    .award-wrapper-image img {
+        height: 210px;
     }
     .award-wrapper-image img {
         height: auto;
