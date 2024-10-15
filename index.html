@@ -396,41 +396,31 @@ expandBtn.forEach((btn) => {
                         
                         
                         <div id="contact-btn" class="tabcontent">
-                          
                             <form method="POST" action="#">
-    
-                                <div class="form-radio">
-        
-                                    <div class="radio-button">
-                                        
-                                        
-                                        <div class="search-button">
-                                            
-                                            
-                                            <input type="search" id="gsearch" name="gsearch" placeholder="Select a location">
-                                            
-                                            <button class="search">
-                                                
-                                                <img src="./assets/images/search.png"/>
-                                                
-                                            </button>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                    
-        
-                                </div>   
-    
-                                 
-        
-                                   
-        
-    
-                            
-                        </form>
-                          
-                        </div>
+                              <div class="form-radio">
+                                <div class="radio-button">
+                                  <div class="search-button">
+                                    <input
+                                      type="search"
+                                      id="gsearch"
+                                      name="gsearch"
+                                      placeholder="Select a location"
+                                      oninput="searchCity()"
+                                    />
+                                    <button
+                                      class="search"
+                                      type="button"
+                                      onclick="searchCity();"
+                                    >
+                                      <img src="./assets/images/search.png" />
+                                    </button>
+                                  </div>
+                                  <!-- Search results will be displayed here -->
+                                  <div id="cityResult" class="tabcontent"></div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
                                                 
                         
                     </div>
@@ -1443,6 +1433,91 @@ map.on('load', async () => {
 
 
 <script>
+
+const addresses = [
+        {
+          city: "Kolkata",
+          address: `Expressway Cargo Movers Pvt Ltd,
+                Siddha Esplanade, 5Th Floor, Room No 507,
+                6, Jawaharlal Nehru Road, Kolkata 700013`,
+        },
+        {
+          city: "Mumbai",
+          address: `Office No-703, 7th Floor, A wing, 
+                Damji Shamji Corporate Square, Laxminagar, 
+                Ghatkopar (E) Mumbai-400075, Maharashtra, India.`,
+        },
+        {
+          city: "Delhi",
+          address: `Room No - 420, 4th Floor, 
+                38 Ansal Tower, Nehru Place, 
+                New Delhi-110019.`,
+        },
+        {
+          city: "Chennai",
+          address: `Door No 3, Venkat Lingam Street, 
+                2nd Floor, Office Portion (2A), 
+                Clive Battery, Chennai – 600001.`,
+        },
+        {
+          city: "Mundra",
+          address: `Office No-103, 1st Floor, 
+                Riddhi Siddhi Arcade II, Plot No-40, 
+                Sector-8, Gandhidham, (Kutch) - 370201 Gujarat, India.`,
+        },
+        {
+          city: "Port Klang (International)",
+          address: `ExpressWay Container Lines SDN BHD, 
+                SUITE 22-12, Level 22, Centro Mall, 
+                8 Jalan Batu Tiga Lama 41300, Klang, Selangor, Malaysia.`,
+          country: "Malaysia",
+        },
+        {
+          city: "Dubai (International)",
+          address: `Express Overseas Line Cargo Services L.L.C, 
+                Office No 318, Zainal Mohebi Plaza Building, 
+                Al Karama, Dubai`,
+        },
+        {
+          city: "Indonesia (International)",
+          address: `Pt Expressway Shipping Indonesia, 
+                Gd. Jaya Lantai 5 Unit A.6, Jl. Mh. Thamrin No.12 
+                Desa/Kelurahan Ci Kini, Kec.Menteng, Kota Adm. Jakarta Pusat, 
+                Provinsi Dki Jakarta (Indonesia), Kode Pos: 10340`,
+        },
+      ];
+
+
+      function searchCity() {
+        const input = document.getElementById("gsearch").value.toLowerCase(); // Get input value
+        const cityResultDiv = document.getElementById("cityResult"); // Result div
+
+        // Clear previous results
+        cityResultDiv.innerHTML = "";
+        cityResultDiv.style.display = "none"; // Hide the results by default
+
+        // Check if the input is empty
+        if (input.trim() === "") {
+          return; // If input is empty, do nothing
+        }
+
+        // Find the city that matches the input
+        const city = addresses.find(
+          (item) =>
+            item.city.toLowerCase().includes(input) ||
+            item.country?.toLowerCase().includes(input)
+        );
+
+        // If a matching city is found, display the address
+        if (city) {
+          cityResultDiv.innerHTML = `<h3>${city.city}</h3><p>${city.address}</p>`;
+          cityResultDiv.style.display = "block"; // Show the results
+        } else {
+          // If no city is found, display a 'no results' message
+          cityResultDiv.innerHTML = "No matching city found.";
+          cityResultDiv.style.display = "block"; // Show the 'no results' message
+        }
+      }
 
 function openCity(evt, cityName) {
   // Declare all variables
