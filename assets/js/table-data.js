@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded' , function(e) {
 
-  const apiUrl = 'http://94.136.187.170:4017/api/v1/trackData/'; 
+  const apiUrl = 'https://expresswayshipping.com/ecm-api/api/v1/trackData'; 
 
   function showLoading() {
       document.getElementById('loading').style.display = 'block';
