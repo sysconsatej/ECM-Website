@@ -416,7 +416,7 @@ expandBtn.forEach((btn) => {
                                     </button>
                                   </div>
                                   <!-- Search results will be displayed here -->
-                                  <div id="cityResult" class="tabcontent"></div>
+                                  <div id="cityResult" ></div>
                                 </div>
                               </div>
                             </form>
@@ -1510,7 +1510,15 @@ const addresses = [
 
         // If a matching city is found, display the address
         if (city) {
-          cityResultDiv.innerHTML = `<h3>${city.city}</h3><p>${city.address}</p>`;
+          cityResultDiv.innerHTML = `   <div class="abt-left" >
+                <h2>
+                ${city.city}
+
+                </h2> 
+                </div>
+                 <div class="abt-express-para">
+
+               <p> ${city.address}</p> </div> `;
           cityResultDiv.style.display = "block"; // Show the results
         } else {
           // If no city is found, display a 'no results' message
