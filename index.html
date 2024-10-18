@@ -103,7 +103,7 @@
 
                 <li><a href="contact-us.html" class="menu-item first-item">Contact Us</a></li>
 
-                <li><a href="http://94.136.187.170:4001/login" class="menu-item first-item login-btn-header">Login</a></li>
+                <li  ><a id="loginText" href="https://expresswayshipping.com/cp/login" class="menu-item first-item login-btn-header">Login</a></li>
 
                 <!-- Dropdown Left -->
 
@@ -178,6 +178,28 @@
 
 
 <script>
+
+    const loginText = document.getElementById("loginText");
+    const token = localStorage.getItem('token');
+    
+    if (token) {
+        loginText.innerText = 'Logout';
+        loginText.classList.add("menu-itemfirst-itemlogin-btn-header");
+    }
+    
+    const logout = () => {
+        loginText.addEventListener("click", () => { 
+            // Check if currently showing "Logout" before proceeding
+            if (loginText.innerText === 'Logout'.toUpperCase()) {
+                loginText.innerText = 'Login';
+                loginText.classList.add("menu-itemfirst-itemlogin-btn-header");
+                localStorage.removeItem('token');
+                loginText.setAttribute('href', 'https://expresswayshipping.com/cp/login');
+            }
+        });
+    };
+    
+    logout();    
 
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
