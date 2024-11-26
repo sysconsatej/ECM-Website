@@ -14,9 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
     
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js'></script>
 
 </head>
 <body>
@@ -29,7 +28,7 @@
 
         <header class="navbar sticky header-parent">
 
-          <a class="logo header-logo" href="http://www.sysconinfotech.com/ECM-WEBSITE/">
+          <a class="logo header-logo" href="http://expresswayshipping.com/">
               <img src="./assets/images/express-group-logo-footer.png" alt="Logo">
           </a>
 
@@ -97,14 +96,14 @@
 
                 <li><a href="our-presence.html" class="menu-item first-item">Our Presence</a></li>
 
-                <li><a href="http://94.136.187.170:4001/customerPortal" target="_blank" class="menu-item first-item">Customer Portals</a></li>
+                <li><a href="https://expresswayshipping.com/cp/customerPortal" target="_blank" class="menu-item first-item">Customer Portals</a></li>
 
 
                 <li><a href="career.html" class="menu-item first-item">Career</a></li>
 
                 <li><a href="contact-us.html" class="menu-item first-item">Contact Us</a></li>
 
-                <li><a href="http://94.136.187.170:4001/login" class="menu-item first-item login-btn-header">Login</a></li>
+                <li  ><a id="loginText" href="https://expresswayshipping.com/cp/login" class="menu-item first-item login-btn-header">Login</a></li>
 
                 <!-- Dropdown Left -->
 
@@ -179,6 +178,28 @@
 
 
 <script>
+
+    const loginText = document.getElementById("loginText");
+    const token = localStorage.getItem('token');
+    
+    if (token) {
+        loginText.innerText = 'Logout';
+        loginText.classList.add("menu-itemfirst-itemlogin-btn-header");
+    }
+    
+    const logout = () => {
+        loginText.addEventListener("click", () => { 
+            // Check if currently showing "Logout" before proceeding
+            if (loginText.innerText === 'Logout'.toUpperCase()) {
+                loginText.innerText = 'Login';
+                loginText.classList.add("menu-itemfirst-itemlogin-btn-header");
+                localStorage.removeItem('token');
+                loginText.setAttribute('href', 'https://expresswayshipping.com/cp/login');
+            }
+        });
+    };
+    
+    logout();    
 
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
@@ -280,7 +301,7 @@ expandBtn.forEach((btn) => {
                         <div class="tab">
                             
                           <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'tracking-btn')" >Tracking</button>
-                          <button class="tablinks" onclick="openCity(event, 'schedule-btn')">Schedules</button>
+                          <button class="tablinks" onclick="navigateVessel()">Schedules</button>
                           <button class="tablinks" onclick="openCity(event, 'contact-btn')">Contacts</button>
                           <button class="tablinks" onclick="navigateQuotationForm()" >RFQ</button>
                         </div>
@@ -397,41 +418,31 @@ expandBtn.forEach((btn) => {
                         
                         
                         <div id="contact-btn" class="tabcontent">
-                          
                             <form method="POST" action="#">
-    
-                                <div class="form-radio">
-        
-                                    <div class="radio-button">
-                                        
-                                        
-                                        <div class="search-button">
-                                            
-                                            
-                                            <input type="search" id="gsearch" name="gsearch" placeholder="Select a location">
-                                            
-                                            <button class="search">
-                                                
-                                                <img src="./assets/images/search.png"/>
-                                                
-                                            </button>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                    
-        
-                                </div>   
-    
-                                 
-        
-                                   
-        
-    
-                            
-                        </form>
-                          
-                        </div>
+                              <div class="form-radio">
+                                <div class="radio-button">
+                                  <div class="search-button">
+                                    <input
+                                      type="search"
+                                      id="gsearch"
+                                      name="gsearch"
+                                      placeholder="Select a location"
+                                      oninput="searchCity()"
+                                    />
+                                    <button
+                                      class="search"
+                                      type="button"
+                                      onclick="searchCity();"
+                                    >
+                                      <img src="./assets/images/search.png" />
+                                    </button>
+                                  </div>
+                                  <!-- Search results will be displayed here -->
+                                  <div id="cityResult" ></div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
                                                 
                         
                     </div>
@@ -474,11 +485,11 @@ expandBtn.forEach((btn) => {
 
                     </p>
                     <p>
-                        We, at Expressway Shipping provide Non-Vessel Operating Common Carrie (NVOCC)
-                        Services to our customers In leveraging thei cargo movements around/across the
+                        We, at Expressway Shipping provide Non-Vessel Operating Common (NVOCC)
+                        Services to our customers In leveraging cargo movements around/across the
                         ‘maritime logistics domains in india, Gulf, Far East, South East Asia and Europe. Our
                         expertise in the field of shipping full container loads, special equipment and project
-                        cargo using our extensive network of ports and ICDS, which being ona of our key forte.
+                        cargo using our extensive network of ports and ICDS, which being of our key forte.
                     </p>
 
                     <a href="about-us.html">
@@ -1193,6 +1204,19 @@ jQuery(document).ready(function($){
 <!-- Our Presence -->
 
 
+<style>
+.maplibregl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+    #map { height: 500px; }
+
+    .maplibregl-ctrl-bottom-right {
+            display: none;
+    }
+
+
+</style>
 
 <div data-aos="fade-up-right" data-aos-duration="5000" class="our-presence-outer-wrapper">
 
@@ -1245,88 +1269,6 @@ jQuery(document).ready(function($){
 </div>
 
 
-<div id="kolkataPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeKolkataModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>KOLKATA – (Head Office)</h5>
-            <p>Expressway Cargo Movers Pvt Ltd Siddha Esplanade, 5Th Floor, Room No 507 6, Jawaharlal Nehru Road, Kolkata 700013.</p>
-        </div>
-    </div>
-</div>
-
-<div id="mumbaiPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeMumbaiModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>Mumbai</h5>
-            <p>Office No-703, 7th Floor, A wing, Damji Shamji Corporate Square, Laxminagar, Ghatkopar (E) Mumbai-400075, Maharashtra, India.</p>
-        </div>
-    </div>
-</div>
-
-<div id="delhiPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeDelhiModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>DELHI</h5>
-            <p>Room No - 420, 4th Floor, 38 Ansal Tower, Nehru Place, New Delhi-110019.</p>
-        </div>
-    </div>
-</div>
-
-
-<div id="chennaiPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeChennaiModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>Chennai</h5>
-            <p>Door No 3, Venkat Lingam Street, 2nd Floor, Office Portion (2A), Clive Battery, Chennai – 600001.</p>
-        </div>
-    </div>
-</div>
-
-
-<div id="mundraPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeMundraModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>Mundra</h5>
-            <p>Office No-103, 1st Floor, Riddhi Siddhi Arcade II, Plot No-40, Sector-8, Gandhidham, (Kutch) - 370201 Gujarat, India.</p>
-        </div>
-    </div>
-</div>
-
-
-<div id="klangPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeKlangModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>Port Klang (International)</h5>
-            <p>ExpressWay Container Lines SDN BHD SUITE 22-12, Level 22, Centro Mall, 8 Jalan Batu Tiga Lama 41300, Klang, Selangor, Malaysia.</p>
-        </div>
-    </div>
-</div>
-
-<div id="dubaiPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeDubaiModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>DUBAI (INTERNATIONAL)</h5>
-            <p>Express Overseas Line Cargo Services L.L.C Office No 318, Zainal Mohebi Plaza Building Al Karama, Dubai.</p>
-        </div>
-    </div>
-</div>
-
-<div id="indoPopup" class="popup-modal">
-    <div class="popup-modal-inner">
-        <button id="closeIndoModal" class="closeModal">x</button>
-        <div class="poup-content">
-            <h5>INDONESIA (INTERNATIONAL)</h5>
-            <p>Pt Expressway Shipping Indonesia Gd. Jaya Lantai 5 Unit A.6, Jl. Mh. Thamrin No.12 Desa/Kelurahan Ci Kini, Kec.Menteng, Kota Adm. Jakarta Pusat, Provinsi Dki Jakarta (Indonesia), Kode Pos: 10340.</p>
-        </div>
-    </div>
-</div>
 
 
 
@@ -1338,135 +1280,274 @@ jQuery(document).ready(function($){
 
 
 <script>
-    const map = L.map('map').setView([34.0479, 100.6197], 3);
 
-    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: ''
-    }).addTo(map);
+    const map = new maplibregl.Map({
+    renderWorldCopies: false,
+    container: 'map',
+    style: 'https://api.maptiler.com/maps/streets/style.json?key=s8aAiT3FGMEHfSoNeZmZ',
+    center: [78.9629 , 20.5937],
+    zoom: 2
+});
 
-    
-    const kolkataCity = L.marker([22.572645, 88.363892]).addTo(map)
+map.on('load', async () => {
+        const image = await map.loadImage('https://maplibre.org/maplibre-gl-js/docs/assets/custom_marker.png');
+        // Add an image to use as a custom marker
+        map.addImage('custom-marker', image.data);
 
-    const mumbaiCity = L.marker([19.0760, 72.8777]).addTo(map)
+        map.addSource('places', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<h6 class="poup-content-title">Kolkata City</h6><p class="poup-content" >Expressway Cargo Movers Pvt Ltd Siddha Esplanade, 5Th Floor, Room No 5076, Jawaharlal Nehru Road, Kolkata 700013</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [88.363892, 22.572645]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<h6 class="poup-content-title">Mumbai</h6><p class="poup-content" >Office No-703, 7th Floor, A wing, Damji Shamji Corporate Square, Laxminagar, Ghatkopar (E) Mumbai-400075, Maharashtra, India.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [72.877426, 19.07609]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<h6 class="poup-content-title">Delhi</h6><p class="poup-content" >Room No - 420, 4th Floor, 38 Ansal Tower, Nehru Place, New Delhi-110019.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [77.216721, 28.644800]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                 '<h6 class="poup-content-title">Chennai</h6><p class="poup-content" >Door No 3, Venkat Lingam Street, 2nd Floor, Office Portion (2A), Clive Battery, Chennai – 600001.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [80.237617, 13.067439]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">Mundra</h6><p class="poup-content" >Office No-103, 1st Floor, Riddhi Siddhi Arcade II, Plot No-40, Sector-8, Gandhidham, (Kutch) - 370201 Gujarat, India.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [69.721329, 22.839520]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<h6 class="poup-content-title">Port Klang (International)</h6><p class="poup-content" >ExpressWay Container Lines SDN BHD SUITE 22-12, Level 22, Centro Mall, 8 Jalan Batu Tiga Lama 41300, Klang, Selangor, Malaysia.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [101.445564, 3.044917]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">DUBAI (INTERNATIONAL)</h6><p class="poup-content" >Express Overseas Line Cargo Services L.L.C Office No 318, Zainal Mohebi Plaza Building Al Karama, Dubai</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [55.296249, 25.276987]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">INDONESIA (INTERNATIONAL)</h6><p class="poup-content" >Pt Expressway Shipping Indonesia Gd. Jaya Lantai 5 Unit A.6, Jl. Mh. Thamrin No.12 Desa/Kelurahan Ci Kini, Kec.Menteng, Kota Adm. Jakarta Pusat, Provinsi Dki Jakarta (Indonesia), Kode Pos: 10340</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [118.015567, -2.5187220]
+                        }
+                    }
+                ]
+            }
+        });
 
-    const delhiCity = L.marker([28.644800, 77.216721]).addTo(map)
 
-    const chennaiCity = L.marker([13.067439, 80.237617]).addTo(map)
-
-    const mundraCity = L.marker([22.8396, 69.7241]).addTo(map)
-
-    const klangCity = L.marker([2.9999, 101.3928]).addTo(map)
-
-    const dubaiCity = L.marker([25.2048, 55.2708]).addTo(map)
-
-    const indoCity = L.marker([6.1944,106.8229]).addTo(map)
-
-    
-
-    
-
-
-
-
-    // Show the modal on Kolkata marker click
-    kolkataCity.on('mouseover', () => {
-        document.getElementById('kolkataPopup').style.display = 'flex';
+    map.addLayer({
+        'id': 'places',
+        'type': 'symbol',
+        'source': 'places',
+        'layout': {
+            'icon-image': 'custom-marker',
+            'icon-overlap': 'always'
+        }
     });
 
-    // Close modal functionality
-    document.getElementById('closeKolkataModal').addEventListener('click', () => {
-        document.getElementById('kolkataPopup').style.display = 'none';
+    const popup = new maplibregl.Popup({
+        closeButton: false,
+        closeOnClick: false
     });
 
+    map.on('mouseenter', 'places', (e) => {
+        map.getCanvas().style.cursor = 'pointer';
 
-    // Show the modal on Mumbai marker click
-    mumbaiCity.on('mouseover', () => {
-        document.getElementById('mumbaiPopup').style.display = 'flex';
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const description = e.features[0].properties.description;
+
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        popup.setLngLat(coordinates).setHTML(description).addTo(map);
+
     });
 
-    // Close modal functionality
-    document.getElementById('closeMumbaiModal').addEventListener('click', () => {
-        document.getElementById('mumbaiPopup').style.display = 'none';
+    map.on('mouseleave', 'places', () => {
+        map.getCanvas().style.cursor = '';
+        popup.remove(); 
+
     });
-
-
-    // Show the modal on Delhi marker click
-    delhiCity.on('mouseover', () => {
-        document.getElementById('delhiPopup').style.display = 'flex';
-    });
-
-    // Close modal functionality
-    document.getElementById('closeDelhiModal').addEventListener('click', () => {
-        document.getElementById('delhiPopup').style.display = 'none';
-    });
-
-
-    // Show the modal on Chennai marker click
-    chennaiCity.on('mouseover', () => {
-        document.getElementById('chennaiPopup').style.display = 'flex';
-    });
-
-    // Close modal functionality
-    document.getElementById('closeChennaiModal').addEventListener('click', () => {
-        document.getElementById('chennaiPopup').style.display = 'none';
-    });
-
-
-    // Show the modal on Mundra marker click
-    mundraCity.on('mouseover', () => {
-        document.getElementById('mundraPopup').style.display = 'flex';
-    });
-
-    // Close modal functionality
-    document.getElementById('closeMundraModal').addEventListener('click', () => {
-        document.getElementById('mundraPopup').style.display = 'none';
-    });
-
-
-    // Show the modal on Klang marker click
-    klangCity.on('mouseover', () => {
-        document.getElementById('klangPopup').style.display = 'flex';
-    });
-
-    // Close modal functionality
-    document.getElementById('closeKlangModal').addEventListener('click', () => {
-        document.getElementById('klangPopup').style.display = 'none';
-    });
-
-
-    // Show the modal on Dubai marker click
-    dubaiCity.on('mouseover', () => {
-        document.getElementById('dubaiPopup').style.display = 'flex';
-    });
-
-    // Close modal functionality
-    document.getElementById('closeDubaiModal').addEventListener('click', () => {
-        document.getElementById('dubaiPopup').style.display = 'none';
-    });
-
-
-    // Show the modal on Indo marker click
-    indoCity.on('mouseover', () => {
-        document.getElementById('indoPopup').style.display = 'flex';
-    });
-
-    // Close modal functionality
-    document.getElementById('closeIndoModal').addEventListener('click', () => {
-        document.getElementById('indoPopup').style.display = 'none';
-    });
-
-
+});
    
-
 </script>
 
 
 
+<!-- <script>
+    /*
+    const map = new maplibregl.Map({
+        container: 'map',
+        style:
+            // 'https://api.maptiler.com/maps/streets/style.json?key=tR5sK6IujZIPp5SUgK7F',
+            'https://api.maptiler.com/maps/streets/style.json?key=tR5sK6IujZIPp5SUgK7F',
+        center: [-73.935242, 40.730610],
+        zoom: 8
+    });
+
+    const marker = new maplibregl.Marker()
+        .setLngLat([-73.935242, 40.730610])
+        .addTo(map);
+    */
+</script> -->
+
+
+
 
 
 
 <script>
+
+const addresses = [
+        {
+          city: "Kolkata",
+          address: `Expressway Cargo Movers Pvt Ltd,
+                Siddha Esplanade, 5Th Floor, Room No 507,
+                6, Jawaharlal Nehru Road, Kolkata 700013`,
+        },
+        {
+          city: "Mumbai",
+          address: `Office No-703, 7th Floor, A wing, 
+                Damji Shamji Corporate Square, Laxminagar, 
+                Ghatkopar (E) Mumbai-400075, Maharashtra, India.`,
+        },
+        {
+          city: "Delhi",
+          address: `Room No - 420, 4th Floor, 
+                38 Ansal Tower, Nehru Place, 
+                New Delhi-110019.`,
+        },
+        {
+          city: "Chennai",
+          address: `Door No 3, Venkat Lingam Street, 
+                2nd Floor, Office Portion (2A), 
+                Clive Battery, Chennai – 600001.`,
+        },
+        {
+          city: "Mundra",
+          address: `Office No-103, 1st Floor, 
+                Riddhi Siddhi Arcade II, Plot No-40, 
+                Sector-8, Gandhidham, (Kutch) - 370201 Gujarat, India.`,
+        },
+        {
+          city: "Port Klang (International)",
+          address: `ExpressWay Container Lines SDN BHD, 
+                SUITE 22-12, Level 22, Centro Mall, 
+                8 Jalan Batu Tiga Lama 41300, Klang, Selangor, Malaysia.`,
+          country: "Malaysia",
+        },
+        {
+          city: "Dubai (International)",
+          address: `Express Overseas Line Cargo Services L.L.C, 
+                Office No 318, Zainal Mohebi Plaza Building, 
+                Al Karama, Dubai`,
+        },
+        {
+          city: "Indonesia (International)",
+          address: `Pt Expressway Shipping Indonesia, 
+                Gd. Jaya Lantai 5 Unit A.6, Jl. Mh. Thamrin No.12 
+                Desa/Kelurahan Ci Kini, Kec.Menteng, Kota Adm. Jakarta Pusat, 
+                Provinsi Dki Jakarta (Indonesia), Kode Pos: 10340`,
+        },
+      ];
+
+
+      function searchCity() {
+        const input = document.getElementById("gsearch").value.toLowerCase(); // Get input value
+        const cityResultDiv = document.getElementById("cityResult"); // Result div
+
+        // Clear previous results
+        cityResultDiv.innerHTML = "";
+        cityResultDiv.style.display = "none"; // Hide the results by default
+
+        // Check if the input is empty
+        if (input.trim() === "") {
+          return; // If input is empty, do nothing
+        }
+
+        // Find the city that matches the input
+        const city = addresses.find(
+          (item) =>
+            item.city.toLowerCase().includes(input) ||
+            item.country?.toLowerCase().includes(input)
+        );
+
+        // If a matching city is found, display the address
+        if (city) {
+          cityResultDiv.innerHTML = `   <div class="abt-left" >
+                <h2>
+                ${city.city}
+
+                </h2> 
+                </div>
+                 <div class="abt-express-para">
+
+               <p> ${city.address}</p> </div> `;
+          cityResultDiv.style.display = "block"; // Show the results
+        } else {
+          // If no city is found, display a 'no results' message
+          cityResultDiv.innerHTML = "No matching city found.";
+          cityResultDiv.style.display = "block"; // Show the 'no results' message
+        }
+      }
 
 function openCity(evt, cityName) {
   // Declare all variables
@@ -1493,8 +1574,13 @@ document.getElementById("defaultOpen").click();
 
 
 function navigateQuotationForm(){
-    window.open("http://94.136.187.170:4001/customerPortal/quotation","_blank");
+    window.open("https://expresswayshipping.com/cp/requestQuotation","_blank");
 }
+
+function navigateVessel(){
+    window.open("https://expresswayshipping.com/cp/vesselSchedule","_blank");
+}
+
 
 </script>
 
@@ -1512,7 +1598,7 @@ function navigateQuotationForm(){
 
                         <div class="footer-logo">
 
-                            <a href="http://www.sysconinfotech.com/ECM-WEBSITE/">
+                            <a href="http://expresswayshipping.com/">
                                 <img src="./assets/images/express-group-logo-footer.png" alt="">
 
                             </a>
