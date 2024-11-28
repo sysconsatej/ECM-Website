@@ -1292,7 +1292,11 @@ jQuery(document).ready(function($){
 map.on('load', async () => {
         const image = await map.loadImage('https://maplibre.org/maplibre-gl-js/docs/assets/custom_marker.png');
         // Add an image to use as a custom marker
+        const imageRed = await map.loadImage('./assets/images/travel-marker.png');
+
         map.addImage('custom-marker', image.data);
+        map.addImage('custom-marker-red', imageRed.data);
+
 
         map.addSource('places', {
             'type': 'geojson',
@@ -1386,7 +1390,367 @@ map.on('load', async () => {
                             'type': 'Point',
                             'coordinates': [118.015567, -2.5187220]
                         }
-                    }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [103.67280, 1.664036]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [79.855279, 6.905777]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [79.85596, 6.891735]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [100.595419, 13.646306]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [113.28742, 23.136850]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [121.54303, 29.89556]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [115.800108, 33.059811]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [120.3886, 36.064083]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [120.382610, 36.089022]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [114.124795, 22.567162]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [118.793971, 32.087207]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [117.1974285, 39.118282]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [117.1974285, 39.118282]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [121.4830778, 31.2571042]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [121.537428, 31.264719]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [121.671645, 38.904502]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [106.838533, -6.19191]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [98.708486, 3.59846]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [67.006049, 24.850550]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [67.0002330, 24.847801]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [91.8121471, 22.335066]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [106.679132, 10.797512]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [106.6769931, 10.793856]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [51.425097, 35.730578]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [51.413725, 35.7438913]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [56.342523, 27.206403]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [49.970479, 26.426153]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [47.976655, 29.377320]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [96.164652, 16.779265]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                            'color':'red'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [33.045653, 34.675239]
+                        }
+                    },
                 ]
             }
         });
@@ -1397,7 +1761,11 @@ map.on('load', async () => {
         'type': 'symbol',
         'source': 'places',
         'layout': {
-            'icon-image': 'custom-marker',
+            'icon-image': [
+                'case',
+                ['==', ['get', 'color'], 'red'], 'custom-marker-red', 
+                'custom-marker' // fallback marker
+            ],
             'icon-overlap': 'always'
         }
     });
