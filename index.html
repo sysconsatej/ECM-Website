@@ -1286,16 +1286,22 @@ jQuery(document).ready(function($){
     container: 'map',
     style: 'https://api.maptiler.com/maps/streets/style.json?key=s8aAiT3FGMEHfSoNeZmZ',
     center: [78.9629 , 20.5937],
-    zoom: 2
+    zoom: 2,
 });
+
 
 map.on('load', async () => {
         const image = await map.loadImage('https://maplibre.org/maplibre-gl-js/docs/assets/custom_marker.png');
         // Add an image to use as a custom marker
         const imageRed = await map.loadImage('./assets/images/travel-marker.png');
-
         map.addImage('custom-marker', image.data);
         map.addImage('custom-marker-red', imageRed.data);
+
+        map.getStyle().layers.forEach(function(layer) {
+                if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
+                    map.setLayoutProperty(layer.id, 'text-field', '{name:en}'); // Set English text for labels
+                }
+            }); 
 
 
         map.addSource('places', {
