@@ -1242,6 +1242,11 @@ button.search img {
 .footer-main a {
     background-color: transparent;
 }
+
+.footer-main .follow-us img {
+    width: 40px;
+}
+
 .footer-main {
     background-color: #E1E1E1;
     padding: 50px 0px;
