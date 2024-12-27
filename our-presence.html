@@ -309,9 +309,9 @@ expandBtn.forEach((btn) => {
         });
     
     map.on('load', async () => {
-            const image = await map.loadImage('https://maplibre.org/maplibre-gl-js/docs/assets/custom_marker.png');
+            const image = await map.loadImage('./assets/images/pin-map-blue.png');
             // Add an image to use as a custom marker
-            const imageRed = await map.loadImage('./assets/images/travel-marker.png');
+            const imageRed = await map.loadImage('./assets/images/pin-map.png');
            map.addImage('custom-marker', image.data);
            map.addImage('custom-marker-red', imageRed.data);
 
@@ -322,103 +322,103 @@ expandBtn.forEach((btn) => {
             });
     
             map.addSource('places', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                    '<h6 class="poup-content-title">Kolkata City</h6><p class="poup-content" >Expressway Cargo Movers Pvt Ltd Siddha Esplanade, 5Th Floor, Room No 5076, Jawaharlal Nehru Road, Kolkata 700013</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [88.363892, 22.572645]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                    '<h6 class="poup-content-title">Mumbai</h6><p class="poup-content" >Office No-703, 7th Floor, A wing, Damji Shamji Corporate Square, Laxminagar, Ghatkopar (E) Mumbai-400075, Maharashtra, India.</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [72.877426, 19.07609]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                    '<h6 class="poup-content-title">Delhi</h6><p class="poup-content" >Room No - 420, 4th Floor, 38 Ansal Tower, Nehru Place, New Delhi-110019.</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [77.216721, 28.644800]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                     '<h6 class="poup-content-title">Chennai</h6><p class="poup-content" >Door No 3, Venkat Lingam Street, 2nd Floor, Office Portion (2A), Clive Battery, Chennai – 600001.</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [80.237617, 13.067439]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                   '<h6 class="poup-content-title">Mundra</h6><p class="poup-content" >Office No-103, 1st Floor, Riddhi Siddhi Arcade II, Plot No-40, Sector-8, Gandhidham, (Kutch) - 370201 Gujarat, India.</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [69.721329, 22.839520]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                    '<h6 class="poup-content-title">Port Klang (International)</h6><p class="poup-content" >ExpressWay Container Lines SDN BHD SUITE 22-12, Level 22, Centro Mall, 8 Jalan Batu Tiga Lama 41300, Klang, Selangor, Malaysia.</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [101.445564, 3.044917]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                   '<h6 class="poup-content-title">DUBAI (INTERNATIONAL)</h6><p class="poup-content" >Express Overseas Line Cargo Services L.L.C Office No 318, Zainal Mohebi Plaza Building Al Karama, Dubai</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [55.296249, 25.276987]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                'description':
-                                   '<h6 class="poup-content-title">INDONESIA (INTERNATIONAL)</h6><p class="poup-content" >Pt Expressway Shipping Indonesia Gd. Jaya Lantai 5 Unit A.6, Jl. Mh. Thamrin No.12 Desa/Kelurahan Ci Kini, Kec.Menteng, Kota Adm. Jakarta Pusat, Provinsi Dki Jakarta (Indonesia), Kode Pos: 10340</p>'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [118.015567, -2.5187220]
-                            }
-                        },
-                        {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                                '<h6 class="poup-content-title">Kolkata City</h6><p class="poup-content" >Expressway Cargo Movers Pvt Ltd Siddha Esplanade, 5Th Floor, Room No 5076, Jawaharlal Nehru Road, Kolkata 700013</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [88.363892, 22.572645]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<h6 class="poup-content-title">Mumbai</h6><p class="poup-content" >Office No-703, 7th Floor, A wing, Damji Shamji Corporate Square, Laxminagar, Ghatkopar (E) Mumbai-400075, Maharashtra, India.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [72.877426, 19.07609]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<h6 class="poup-content-title">Delhi</h6><p class="poup-content" >Room No - 420, 4th Floor, 38 Ansal Tower, Nehru Place, New Delhi-110019.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [77.216721, 28.644800]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                 '<h6 class="poup-content-title">Chennai</h6><p class="poup-content" >Door No 3, Venkat Lingam Street, 2nd Floor, Office Portion (2A), Clive Battery, Chennai – 600001.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [80.237617, 13.067439]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">Mundra</h6><p class="poup-content" >Office No-103, 1st Floor, Riddhi Siddhi Arcade II, Plot No-40, Sector-8, Gandhidham, (Kutch) - 370201 Gujarat, India.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [69.721329, 22.839520]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<h6 class="poup-content-title">Port Klang (International)</h6><p class="poup-content" >ExpressWay Container Lines SDN BHD SUITE 22-12, Level 22, Centro Mall, 8 Jalan Batu Tiga Lama 41300, Klang, Selangor, Malaysia.</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [101.445564, 3.044917]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">DUBAI (INTERNATIONAL)</h6><p class="poup-content" >Express Overseas Line Cargo Services L.L.C Office No 318, Zainal Mohebi Plaza Building Al Karama, Dubai</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [55.296249, 25.276987]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">INDONESIA (INTERNATIONAL)</h6><p class="poup-content" >Pt Expressway Shipping Indonesia Gd. Jaya Lantai 5 Unit A.6, Jl. Mh. Thamrin No.12 Desa/Kelurahan Ci Kini, Kec.Menteng, Kota Adm. Jakarta Pusat, Provinsi Dki Jakarta (Indonesia), Kode Pos: 10340</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [118.015567, -2.5187220]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">SINGAPORE</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -430,7 +430,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">COLOMBO</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -442,7 +442,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">COLOMBO</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -454,7 +454,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shenzhen (Shekou)</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -466,7 +466,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shenzhen (Shekou)</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -478,7 +478,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Ningbo</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -490,7 +490,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Ningbo</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -502,7 +502,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Qingdao</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -514,7 +514,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Qingdao</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -526,7 +526,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Xiamen</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -538,7 +538,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Xiamen</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -550,7 +550,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Tianjin</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -562,7 +562,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Tianjin</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -574,7 +574,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shanghai</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -586,7 +586,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shanghai</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -598,7 +598,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">DALIAN</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -610,7 +610,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">JAKARTA</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -622,7 +622,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BELAWAN</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -634,7 +634,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">KARACHI</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -646,7 +646,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">KARACHI</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -658,7 +658,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">CHITTAGONG</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -670,7 +670,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">HAIPONG</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -682,7 +682,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">HO CHI MINH</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -694,7 +694,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BANDAR ABBAS</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -706,7 +706,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BANDAR ABBAS</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -718,7 +718,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BANDAR ABBAS</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -730,7 +730,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">JEDDAH / DAMMAM / BAHRIN</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -742,7 +742,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">UMM QASR</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -754,7 +754,7 @@ expandBtn.forEach((btn) => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Myanmar Branch</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -762,36 +762,29 @@ expandBtn.forEach((btn) => {
                             'coordinates': [96.164652, 16.779265]
                         }
                     },
-                    {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
-                            'color':'red'
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [33.045653, 34.675239]
-                        }
-                    },
-                    ]
-                }
-            });
+                ]
+            }
+        });
     
     
-     map.addLayer({
-        'id': 'places',
-        'type': 'symbol',
-        'source': 'places',
-        'layout': {
-            'icon-image': [
-                'case',
-                ['==', ['get', 'color'], 'red'], 'custom-marker-red', 
-                'custom-marker' // fallback marker
-            ],
-            'icon-overlap': 'always'
-        }
-    });
+        map.addLayer({
+    'id': 'places',
+    'type': 'symbol',
+    'source': 'places',
+    'layout': {
+        'icon-image': [
+            'case',
+            ['==', ['get', 'color'], 'red'], 'custom-marker-red',
+            'custom-marker' // fallback marker
+        ],
+        'icon-size': [
+            'case',
+            ['==', ['get', 'color'], 'red'], 0.5, // Larger size for red markers
+            0.5 // Default size for other markers
+        ],
+        'icon-overlap': 'always'
+    }
+});
     
         const popup = new maplibregl.Popup({
             closeButton: false,

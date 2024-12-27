@@ -1291,9 +1291,9 @@ jQuery(document).ready(function($){
 
 
 map.on('load', async () => {
-        const image = await map.loadImage('https://maplibre.org/maplibre-gl-js/docs/assets/custom_marker.png');
+        const image = await map.loadImage('./assets/images/pin-map-blue.png');
         // Add an image to use as a custom marker
-        const imageRed = await map.loadImage('./assets/images/travel-marker.png');
+        const imageRed = await map.loadImage('./assets/images/pin-map.png');
         map.addImage('custom-marker', image.data);
         map.addImage('custom-marker-red', imageRed.data);
 
@@ -1401,7 +1401,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">SINGAPORE</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1413,7 +1413,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">COLOMBO</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1425,7 +1425,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">COLOMBO</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1437,7 +1437,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shenzhen (Shekou)</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1449,7 +1449,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shenzhen (Shekou)</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1461,7 +1461,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Ningbo</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1473,7 +1473,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Ningbo</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1485,7 +1485,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Qingdao</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1497,7 +1497,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Qingdao</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1509,7 +1509,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Xiamen</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1521,7 +1521,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Xiamen</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1533,7 +1533,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Tianjin</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1545,7 +1545,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Tianjin</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1557,7 +1557,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shanghai</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1569,7 +1569,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Shanghai</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1581,7 +1581,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">DALIAN</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1593,7 +1593,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">JAKARTA</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1605,7 +1605,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BELAWAN</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1617,7 +1617,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">KARACHI</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1629,7 +1629,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">KARACHI</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1641,7 +1641,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">CHITTAGONG</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1653,7 +1653,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">HAIPONG</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1665,7 +1665,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">HO CHI MINH</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1677,7 +1677,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BANDAR ABBAS</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1689,7 +1689,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BANDAR ABBAS</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1701,7 +1701,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">BANDAR ABBAS</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1713,7 +1713,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">JEDDAH / DAMMAM / BAHRIN</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1725,7 +1725,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">UMM QASR</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1737,7 +1737,7 @@ map.on('load', async () => {
                         'type': 'Feature',
                         'properties': {
                             'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
+                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6><p class="poup-content-title">Myanmar Branch</p>',
                             'color':'red'
                         },
                         'geometry': {
@@ -1745,36 +1745,29 @@ map.on('load', async () => {
                             'coordinates': [96.164652, 16.779265]
                         }
                     },
-                    {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                               '<h6 class="poup-content-title">enquiry@expresswayshipping.com</h6>',
-                            'color':'red'
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [33.045653, 34.675239]
-                        }
-                    },
                 ]
             }
         });
 
 
-    map.addLayer({
-        'id': 'places',
-        'type': 'symbol',
-        'source': 'places',
-        'layout': {
-            'icon-image': [
-                'case',
-                ['==', ['get', 'color'], 'red'], 'custom-marker-red', 
-                'custom-marker' // fallback marker
-            ],
-            'icon-overlap': 'always'
-        }
-    });
+        map.addLayer({
+    'id': 'places',
+    'type': 'symbol',
+    'source': 'places',
+    'layout': {
+        'icon-image': [
+            'case',
+            ['==', ['get', 'color'], 'red'], 'custom-marker-red',
+            'custom-marker' // fallback marker
+        ],
+        'icon-size': [
+            'case',
+            ['==', ['get', 'color'], 'red'], 0.5, // Larger size for red markers
+            0.5 // Default size for other markers
+        ],
+        'icon-overlap': 'always'
+    }
+});
 
     const popup = new maplibregl.Popup({
         closeButton: false,
