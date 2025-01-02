@@ -1270,7 +1270,36 @@ jQuery(document).ready(function($){
 
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Check for the auth token in localStorage
+      const token = localStorage.getItem("authToken");
+      if (!token) {
+        console.log("No token found.");
+        return; // No token stored, exit
+      }
 
+      try {
+        // Decode the token
+        const decoded = JSON.parse(atob(token.split(".")[1])); // Base64 decode payload
+        const now = Math.floor(Date.now() / 1000); // Current time in seconds
+
+        if (decoded.exp < now) {
+          console.log("Token has expired. Removing from localStorage.");
+          localStorage.removeItem("authToken"); // Remove the token
+          // Optionally, redirect to login page
+          window.location.href = "/login.html";
+        } else {
+          console.log("Token is still valid.");
+          // You can proceed with authenticated actions
+        }
+      } catch (error) {
+        console.error("Error decoding the token:", error);
+        // Handle invalid token format
+        localStorage.removeItem("authToken");
+      }
+    });
+  </script>
 
 
 
