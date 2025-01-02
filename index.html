@@ -1286,7 +1286,7 @@ jQuery(document).ready(function($){
 
         if (decoded.exp < now) {
           console.log("Token has expired. Removing from localStorage.");
-          localStorage.removeItem("authToken"); // Remove the token
+          localStorage.removeItem("token"); // Remove the token
           // Optionally, redirect to login page
           window.location.href = "/login.html";
         } else {
