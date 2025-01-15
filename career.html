@@ -371,10 +371,10 @@
               <div class="form-country">
                 <label for="country-select">Country</label>
                 <select id="country-dropdown" required>
-                  <option value="seo">India</option>
-                  <option value="saab">US</option>
-                  <option value="fiat">UK</option>
-                  <option value="audi">UAE</option>
+                  <option value="India">India</option>
+                  <option value="US">US</option>
+                  <option value="UK">UK</option>
+                  <option value="UAE">UAE</option>
                 </select>
 
                 <div class="error-field">
@@ -421,7 +421,8 @@
     <script>
       const handleSubmit = async (event) => {
         event.preventDefault();
-
+        
+        const form = event.target;
         const fname = document.getElementById("fname").value;
         const email = document.getElementById("p-email").value;
         const phone = document.getElementById("p-phone").value;
@@ -431,8 +432,6 @@
         const coverMessage = document.getElementById("cover-message").value;
         const myFileInput = document.getElementById("myFile");
         const file = myFileInput.files[0]; 
-
-        console.log('file',file);
 
         const formData = new FormData();
         formData.append("name", fname);
@@ -444,12 +443,13 @@
         formData.append("myFile", file);
 
         try {
-          const response = fetch("http://localhost:4017/api/v1/careerForm", {
+          const response = fetch("https://expresswayshipping.com/ecm-api/api/v1/careerForm", {
             method: "POST",
             body: formData,
           });
 
           alert("Form submitted successfully!");
+          form.reset();
         } catch (error) {
           console.log("error", error);
           alert("Form not submitted!");
