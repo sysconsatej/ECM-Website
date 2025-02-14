@@ -1993,7 +1993,7 @@ span.expand-btn svg {
 }
 .our-location-wrapper-in {
     box-shadow: rgba(0, 0, 0, 0.15) 0 4px 10px 0px;
-    padding: 20px;
+    padding: 20px 10px;
     min-height: 290px;
 }
 .our-location-wrapper-title {
