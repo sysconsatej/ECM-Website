@@ -1986,6 +1986,11 @@ span.expand-btn svg {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.our-locations .second-session {
+    margin-top:40px;
+}
+
 .our-locations {
     margin: 100px 0;
     padding-bottom: 20px;
